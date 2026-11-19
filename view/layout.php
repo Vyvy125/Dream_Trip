@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	 <title>Book Library</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php 
+    if (isset($_GET['controller']) && $_GET['controller'] == 'Auth' && isset($_GET['action']) && $_GET['action'] == 'login') {
+        echo '<link rel="stylesheet" href="public/css/login.css">';
+    }
+	?>
+
+	<?php
+	if (isset($_GET['controller']) && $_GET['controller'] == 'Auth' && isset($_GET['action']) && $_GET['action'] == 'register') {
+        echo '<link rel="stylesheet" href="public/css/register.css">';
+    }
+    ?>
+	
+	<link rel="stylesheet" href="public/css/main.css">
+	<link rel="stylesheet" href="public/css/font-awesome.min.css">
+</head>
+<body>
+    <?php require_once "route.php"; ?>
+
+	
+
+	<script src="https://kit.fontawesome.com/300afa901c.js" crossorigin="anonymous"></script>
+	
+	<script src="public/js/handleShowPass.js" defer></script>
+</body>
+</html>
