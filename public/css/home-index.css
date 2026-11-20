@@ -1,0 +1,175 @@
+body {
+    background-color: #F7F7F7;
+}
+
+.invi {
+    display: none;
+}
+
+.header-slide {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0046C1;
+    height: 32px;
+    line-height: 32px;
+}
+
+.line-sp {
+    color: #fff;
+    margin-left: 12px;
+    font-size: 14px;
+}
+
+.address-icon {
+    padding-top: 7px;
+    margin-right: 8px;
+}
+
+.list-icon {
+    padding-bottom: 4px;
+}
+
+.address-list {
+    display: flex;
+    cursor: pointer;
+    color: #fff;
+}
+
+.address-langues {
+    color: #fff;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.langues-gr {
+    display: none;
+}
+
+.langues-gr a {
+    width: 100%;
+}
+
+.line-address {
+    display: flex;
+    gap:20px;
+    user-select: none;
+}
+
+.list-city {
+    position: relative;
+    z-index: 10;
+}
+
+.city-gr {
+    position: absolute;
+    left: -567px;
+    width: 700px;
+    background-color: #f5f5f5;
+    color: #000E1A;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .0509803922);
+}
+.gr-city {
+    display: flex;
+    justify-content: space-around;
+}
+
+.gr-city a {
+    color: #000E1A;
+    text-decoration: none;
+}
+
+.gr-city a:hover {
+    color: #0046C1;
+}
+
+.gr-header {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.navbar {
+    height: 72px;
+    line-height: 72px;
+    background-color: #fff;
+}
+
+.col20 {
+    width: 30%;
+}
+
+.col80 {
+    width: 70%;
+}
+
+.navbar-brand {
+    text-decoration: none;
+    color: #001C4D;
+    text-transform: uppercase;
+}
+
+.input-search {
+    padding: 12px;
+    background-color: #e9e9e9;
+    border: none;
+    border-radius: 50px;
+}
+
+.container {
+    display: flex;
+}
+
+.navbar-left {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-right {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-service {
+    display: flex;
+}
+
+.navbar-service a {
+    display: block;
+    margin: 0 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000E1A;
+    line-height: 72px;
+}
+
+.navbar-user {
+
+}
+
+.user-login {
+    background-color: #D9EEFF;
+}
+
+.user-login:hover {
+    border: 1px solid #0046C1;
+}
+
+.user-sign {
+    border: 1px solid #0046C1;
+}
+
+.user-sign:hover {
+    background-color: #0046C1;
+    border: none;
+    color: #fff;
+}
+
+.user-login,
+.user-sign {
+    text-decoration: none;
+    padding: 12px 40px;
+    border-radius: 50px;
+    width: 136px;
+    text-align: center;
+}

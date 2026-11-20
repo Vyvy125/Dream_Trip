@@ -9,14 +9,17 @@
 	<?php 
     if (isset($_GET['controller']) && $_GET['controller'] == 'Auth' && isset($_GET['action']) && $_GET['action'] == 'login') {
         echo '<link rel="stylesheet" href="public/css/login.css">';
-    }
-	?>
+    }?>
 
 	<?php
 	if (isset($_GET['controller']) && $_GET['controller'] == 'Auth' && isset($_GET['action']) && $_GET['action'] == 'register') {
         echo '<link rel="stylesheet" href="public/css/register.css">';
-    }
-    ?>
+    }?>
+	
+	<?php
+	if(isset($_GET['controller']) && $_GET['controller'] == 'Home' && isset($_GET['action']) && $_GET['action'] == 'index') {
+        echo '<link rel="stylesheet" href="public/css/home-index.css">';
+    }?>
 	
 	<link rel="stylesheet" href="public/css/main.css">
 	<link rel="stylesheet" href="public/css/font-awesome.min.css">
@@ -28,6 +31,7 @@
 
 	<script src="https://kit.fontawesome.com/300afa901c.js" crossorigin="anonymous"></script>
 	
+	<script src="public/js/handleShowListCity.js" defer></script>
 	<script src="public/js/handleShowPass.js" defer></script>
 </body>
 </html>

@@ -12,7 +12,7 @@ if (isset($_GET["controller"], $_GET["action"])) {
     $action = "index";
 }
 
-// Chạy các action xử lý POST / redirect trước khi xuất HTML
+
 if (in_array($action, ["handlelogin", "handleRegister"], true)) {
     require_once "view/route.php";
     exit();
