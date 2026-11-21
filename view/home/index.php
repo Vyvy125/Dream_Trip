@@ -59,8 +59,21 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
 
                 <div class="navbar-user">
-                    <a class="user-login" href="index.php?controller=Auth&action=login" class="btn-login">Đăng nhập</a>
-                    <a class="user-sign" href="index.php?controller=Auth&action=register" class="btn-signin">Đăng ký</a>
+                    <?php if (!empty($_SESSION['user'])): ?>
+                        <span class="user-fullname">
+                            Xin chào, <?= htmlspecialchars($_SESSION['user']['fullname']) ?>
+                        </span>
+                        <a class="user-logout" href="index.php?controller=Auth&action=logout">
+                            Đăng xuất
+                        </a>
+                    <?php else: ?>
+                        <a class="user-login btn-login" href="index.php?controller=Auth&action=login">
+                            Đăng nhập
+                        </a>
+                        <a class="user-sign btn-signin" href="index.php?controller=Auth&action=register">
+                            Đăng ký
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

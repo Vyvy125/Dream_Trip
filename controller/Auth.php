@@ -49,7 +49,7 @@ class Auth {
                     'phone'    => $user['phone']
                 ];
 
-                header("Location: index.php?controller=Home&action=primary");
+                header("Location: index.php?controller=Home&action=index");
                 exit();
             } else {
 

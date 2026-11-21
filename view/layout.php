@@ -6,6 +6,7 @@
 	 <title>Book Library</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="public/css/main.css">
 	<?php 
     if (isset($_GET['controller']) && $_GET['controller'] == 'Auth' && isset($_GET['action']) && $_GET['action'] == 'login') {
         echo '<link rel="stylesheet" href="public/css/login.css">';
@@ -21,7 +22,6 @@
         echo '<link rel="stylesheet" href="public/css/home-index.css">';
     }?>
 	
-	<link rel="stylesheet" href="public/css/main.css">
 	<link rel="stylesheet" href="public/css/font-awesome.min.css">
 </head>
 <body>
