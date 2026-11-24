@@ -126,13 +126,13 @@ class Auth {
                 exit();
             }
         }
-}
+    }
 
 
     public function logout() {
         session_start();
         unset($_SESSION['user']);
-        header("Location: index.php?controller=Auth&action=login");
+        header("Location: index.php?controller=Home&action=index");
         exit();
     }
 }

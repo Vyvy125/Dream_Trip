@@ -7,6 +7,9 @@
         case "Auth":
             $controller = new Auth();
             break;
+        case "Explore":
+            $controller = new Explore();
+            break;
     }
     $controller->{$action}();
 ?>

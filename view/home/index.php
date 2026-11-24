@@ -4,77 +4,103 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 ?>
 
-    <div class="header-slide">
-        <div class="line-sp">
-            <p>Liên hệ hỗ trợ: 1800 363 636</p>
-        </div>
+<section class="hero-slide">
+  <div class="hero-overlay"></div>
 
-        <div class="line-address">
-            <div class="address-list">
-                <i class="address-icon fa-solid fa-location-dot"></i>
-                <div class="list-city">
-                    TP.Hồ Chí Minh
-                    <i class="list-icon fa-solid fa-sort-down"></i>
-                    <div class="city-gr invi">
-                        <p class="gr-header">Chọn địa điểm khởi hành</p>
-                        <p class="gr-drs">Hãy chọn để điểm khởi hành để Dream Trip gợi ý cho bạn những điểm đến khiến bạn phải ngạc nhiên</p>
-                        <div class="gr-city">
-                            <a href="">TP.Hồ Chí Minh</a>
-                            <a href="">Hà Nội</a>
-                            <a href="">Đà Nẵng</a>
-                            <a href="">Cần Thơ</a>
-                            <a href="">Nha Trang</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="address-langues">
-                Tiếng Việt
-                <div class="langues-gr">
-                    <a href="">Tiếng Việt</a>
-                    <a href="">Tiếng Anh</a>
-                    <a href="">Tiếng Trung</a>
-                </div>
-            </div>
-        </div>
+  <div class="hero-content">
+    <h1 class="hero-title">
+      Khám phá thế giới<br>
+      <span>Cùng DREAMTRIP</span>
+    </h1>
+    <p class="hero-subtitle">Những hành trình tuyệt vời đang chờ bạn!</p>
+
+    <!-- Thanh tìm kiếm tour -->
+    <form class="search-bar" action="index.php" method="GET">
+      <input type="hidden" name="controller" value="Explore">
+      <input type="hidden" name="action" value="index">
+
+      <div class="search-field custom-select" data-name="departure">
+        <label><i class="fa-solid fa-location-dot"></i> Điểm khởi hành</label>
+        <input type="hidden" name="departure" value="">
+
+        <button type="button" class="custom-select-trigger">
+          <span class="selected-text">Chọn nơi đi</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <ul class="custom-select-dropdown"></ul>
+      </div>
+
+      <div class="search-divider"></div>
+
+      <div class="search-field custom-select" data-name="destination">
+        <label><i class="fa-solid fa-location-dot"></i> Điểm đến</label>
+        <input type="hidden" name="destination" value="">
+
+        <button type="button" class="custom-select-trigger">
+          <span class="selected-text">Chọn điểm đến</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <ul class="custom-select-dropdown"></ul>
+      </div>
+
+      <div class="search-divider"></div>
+
+      <div class="search-field custom-datepicker" id="departDatePicker">
+  <label><i class="fa-regular fa-calendar"></i> Ngày khởi hành</label>
+  <input type="hidden" name="depart_date" id="departDateValue" value="">
+
+  <button type="button" class="datepicker-trigger">
+    <span class="datepicker-display">Chọn ngày</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+
+  <div class="datepicker-popup">
+    <div class="datepicker-header">
+      <button type="button" class="dp-nav dp-prev" aria-label="Tháng trước">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="dp-month-pill">
+        <span class="dp-month-label"></span>
+      </div>
+      <button type="button" class="dp-nav dp-next" aria-label="Tháng sau">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
     </div>
 
-<!-- Navbar -->
-    <div class="navbar ">
-        <div class="container">
-            <div class="col20 navbar-left">
-                <a class="navbar-brand" href="index.php">✈️ DreamTrip</a>
-                <div class="navbar-search">
-                    <input class="input-search" placeholder="Tìm kiếm" type="text">
-                </div>
-            </div>
-
-            <div class="col80 navbar-right">
-                <div class="navbar-service">
-                    <a href="">Tour trọn gói</a>
-                    <a href="">Vé máy bay</a>
-                    <a href="">Khách sạn</a>
-                    <a href="">Combo du lịch</a>
-                    <a href="">Dịch vụ khác</a>
-                </div>
-
-                <div class="navbar-user">
-                    <?php if (!empty($_SESSION['user'])): ?>
-                        <span class="user-fullname">
-                            Xin chào, <?= htmlspecialchars($_SESSION['user']['fullname']) ?>
-                        </span>
-                        <a class="user-logout" href="index.php?controller=Auth&action=logout">
-                            Đăng xuất
-                        </a>
-                    <?php else: ?>
-                        <a class="user-login btn-login" href="index.php?controller=Auth&action=login">
-                            Đăng nhập
-                        </a>
-                        <a class="user-sign btn-signin" href="index.php?controller=Auth&action=register">
-                            Đăng ký
-                        </a>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
+    <div class="dp-weekdays">
+      <span>Th 2</span>
+      <span>Th 3</span>
+      <span>Th 4</span>
+      <span>Th 5</span>
+      <span>Th 6</span>
+      <span>Th 7</span>
+      <span class="is-sunday">CN</span>
     </div>
+
+    <div class="dp-days"></div>
+  </div>
+</div>
+
+      <div class="search-divider"></div>
+
+      <div class="search-field custom-select" data-name="guests">
+        <label><i class="fa-solid fa-user-group"></i> Số lượng khách</label>
+        <input type="hidden" name="guests" value="1">
+
+        <button type="button" class="custom-select-trigger">
+          <span class="selected-text">1 người</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <ul class="custom-select-dropdown"></ul>
+      </div>
+
+      <button type="submit" class="btn-search-tour">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Tìm kiếm tour</span>
+      </button>
+    </form>
+  </div>
+</section>
