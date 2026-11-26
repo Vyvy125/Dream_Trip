@@ -49,14 +49,19 @@ $navItems = [
 
     <!-- Khu vực tài khoản bên phải -->
     <div class="nav-auth">
-      <?php if (!empty($_SESSION['user'])): ?>
-        <span class="user-greeting">
-          Xin chào, <?= htmlspecialchars($_SESSION['user']['fullname']) ?>
-        </span>
-        <a class="auth-btn btn-outline" href="index.php?controller=Auth&action=logout">
-          Đăng xuất
-        </a>
-      <?php else: ?>
+      <div class="nav-auth">
+        <?php
+          $currentUserName = $_SESSION['user']['fullname'] ?? $_SESSION['user_name'] ?? '';
+        ?>
+        <?php if (!empty($currentUserName)): ?>
+          <span class="user-greeting">
+            Xin chào, <?= htmlspecialchars($currentUserName) ?>
+          </span>
+          <a class="auth-btn btn-outline" href="index.php?controller=Auth&action=logout">
+            Đăng xuất
+          </a>
+        <?php else: ?>
+          <!-- giữ nguyên nút Đăng nhập / Đăng ký của bạn ở dưới -->
         <a class="auth-btn btn-ghost" href="index.php?controller=Auth&action=login">
           Đăng nhập
         </a>
